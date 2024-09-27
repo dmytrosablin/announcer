@@ -14,6 +14,7 @@ const getData = async() => {
         const user_name = process.env.USER_NAME
         const response = await unirest.get(`https://tiktok.com/@${user_name}/`)
         const data = await response.body
+        console.log("L0L")
 
         const video_count_n = process.env.VIDEO_COUNT
 
@@ -33,7 +34,6 @@ fs.readFile("data.json", (error, data) => {
       }
     videoC = JSON.parse(data)
 
-    console.log(videoC.views)
 })
 
 // const main = async() => {
@@ -75,7 +75,7 @@ const timeout = async() => {
             console.log("THE SAME")
         }
         timeout()
-    }, 1000)
+    }, 10000)
 }
 timeout()
 
